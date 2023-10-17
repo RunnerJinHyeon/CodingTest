@@ -136,3 +136,105 @@ rl.on('close', function () {
     console.log('!@#\$%\^&*\(\\\'\"<>?:;');
 });
 ```
+
+### 9. 두 정수 a, b가 주어질 때 다음과 같은 형태의 계산식을 출력하는 코드를 작성해 보세요.
+- a + b = c
+
+```js
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', function (line) {
+    input = line.split(' ');
+}).on('close', function () {
+    let addedNum =   Number(input[0]) + Number(input[1]);
+    console.log( String(input[0])+" + "+String(input[1])+" = "+String(addedNum));
+});
+```
+
+### 10. 두 개의 문자열 str1, str2가 공백으로 구분되어 입력으로 주어집니다. str1과 str2을 이어서 출력하는 코드를 작성해 보세요.
+
+```js
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', function (line) {
+    input = line.split(' ');
+}).on('close', function () {
+    str1 = input[0];
+    str2 = input[1];
+    console.log(str1+str2)
+});
+```
+
+### 11. 문자열 str이 주어집니다. 문자열을 시계방향으로 90도 돌려서 아래 입출력 예와 같이 출력하는 코드를 작성해 보세요
+
+- 입력: abcde
+- 출력: a <br> b<br> c<br>d<br>e
+
+```js
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', function (line) {
+    input = line;
+}).on('close',function(){
+   
+    for(let i = 0; i<input.length; i++){
+        console.log(input[i]);
+        
+    }
+});
+```
+
+### 12. 자연수 n이 입력으로 주어졌을 때 만약 n이 짝수이면 "n is even"을, 홀수이면 "n is odd"를 출력하는 코드를 작성해 보세요.
+
+```js
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', function (line) {
+    input = line.split(' ');
+}).on('close', function () {
+    n = Number(input[0]);
+    if(n%2===0){
+        console.log(n+" is even")
+    }else{
+        console.log(n+" is odd")
+    }
+});
+```
+
+### 13. 문자열 my_string, overwrite_string과 정수 s가 주어집니다. 문자열 my_string의 인덱스 s부터 overwrite_string의 길이만큼을 문자열 overwrite_string으로 바꾼 문자열을 return 하는 solution 함수를 작성해 주세요.
+
+```js
+function solution(my_string, overwrite_string, s) {
+    var answer = '';
+    let splitedString = my_string.slice(0,s);
+    let afterString = my_string.slice(s+overwrite_string.length,my_string.length);
+    
+    answer = splitedString + overwrite_string + afterString;
+    
+    return answer;
+}
+```
